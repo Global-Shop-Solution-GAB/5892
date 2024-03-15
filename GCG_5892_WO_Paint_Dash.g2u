@@ -1,0 +1,1278 @@
+Program.Sub.ScreenSU.Start
+Gui.F_WO_Paint..Create
+Gui.F_WO_Paint..Caption("WO Paint")
+Gui.F_WO_Paint..Size(13185,6915)
+Gui.F_WO_Paint..MinX(0)
+Gui.F_WO_Paint..MinY(0)
+Gui.F_WO_Paint..Position(0,0)
+Gui.F_WO_Paint..BackColor(-2147483633)
+Gui.F_WO_Paint..MousePointer(0)
+Gui.F_WO_Paint..Event(UnLoad,F_WO_Paint_UnLoad)
+Gui.F_WO_Paint.gsgcDash.Create(GsGridControl)
+Gui.F_WO_Paint.gsgcDash.Size(12975,5850)
+Gui.F_WO_Paint.gsgcDash.Position(0,780)
+Gui.F_WO_Paint.gsgcDash.Anchor(15)
+Gui.F_WO_Paint.gsgcDash.Event(RowCellClick,gsgcDash_RowCellClick)
+Gui.F_WO_Paint.gsgcDash.Event(CellValueChanged,gsgcDash_CellValueChanged)
+Gui.F_WO_Paint.dtpTargetDate.Create(DatePicker)
+Gui.F_WO_Paint.dtpTargetDate.Size(1860,285)
+Gui.F_WO_Paint.dtpTargetDate.Position(105,360)
+Gui.F_WO_Paint.dtpTargetDate.Event(Change,dtpTargetDate_Change)
+Gui.F_WO_Paint.lblSelect.Create(Label,"Select Date:",True,1650,255,0,90,150,True,0,"Arial",8,-2147483633,0)
+Gui.F_WO_Paint.cmdRefresh.Create(Button)
+Gui.F_WO_Paint.cmdRefresh.Size(435,435)
+Gui.F_WO_Paint.cmdRefresh.Position(2025,225)
+Gui.F_WO_Paint.cmdRefresh.Caption("Refresh")
+Gui.F_WO_Paint.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.F_WO_Paint.cmdRefresh.ForeColor(-2147483633)
+Gui.F_WO_Paint.lblBegWeek.Create(Label,"",True,3810,255,0,4875,180,True,1,"Arial",8,-2147483633,0)
+Gui.F_WO_Paint.lblEndWeek.Create(Label,"",True,3810,255,0,4875,525,True,1,"Arial",8,-2147483633,0)
+Gui.F_WO_Paint.chkShowAll.Create(CheckBox)
+Gui.F_WO_Paint.chkShowAll.Size(2145,360)
+Gui.F_WO_Paint.chkShowAll.Position(2565,285)
+Gui.F_WO_Paint.chkShowAll.Caption("All Child WOs")
+Gui.F_WO_Paint.chkShowAll.Event(Click,chkShowAll_Click)
+Gui.F_WO_Paint.lblLastRefresh.Create(Label,"",True,3270,255,0,9675,90,True,1,"Arial",8,-2147483633,0)
+Gui.F_WO_Paint.lblLastRefresh.Anchor(9)
+Gui.F_WO_Paint.lblLastUpdate.Create(Label,"",True,3765,255,0,9060,525,True,1,"Arial",8,-2147483633,0)
+Gui.F_WO_Paint.lblLastUpdate.Anchor(9)
+Gui.F_WO_Paint.timerCheckUpdate.Create(Timer)
+Gui.F_WO_Paint.timerCheckUpdate.Enabled(False)
+Gui.F_WO_Paint.timerCheckUpdate.Size(495,300)
+Gui.F_WO_Paint.timerCheckUpdate.Position(9945,60)
+Gui.F_WO_Paint.timerCheckUpdate.Interval(60000)
+Gui.F_WO_Paint.timerCheckUpdate.Event(Timer,timerCheckUpdate_Timer)
+Gui.F_WO_Paint.optView.Create(Option)
+Gui.F_WO_Paint.optView.Size(945,255)
+Gui.F_WO_Paint.optView.Position(6690,390)
+Gui.F_WO_Paint.optView.Caption("View")
+Gui.F_WO_Paint.optView.Anchor(9)
+Gui.F_WO_Paint.optEdit.Create(Option)
+Gui.F_WO_Paint.optEdit.Size(945,255)
+Gui.F_WO_Paint.optEdit.Position(7770,390)
+Gui.F_WO_Paint.optEdit.Caption("Edit")
+Gui.F_WO_Paint.optEdit.Anchor(9)
+Gui.F_Color..Create
+Gui.F_Color..Caption("Select Color")
+Gui.F_Color..Size(3660,1755)
+Gui.F_Color..MinX(0)
+Gui.F_Color..MinY(0)
+Gui.F_Color..Position(0,0)
+Gui.F_Color..BackColor(-2147483633)
+Gui.F_Color..MaxButton(False)
+Gui.F_Color..MousePointer(0)
+Gui.F_Color..Sizeable(False)
+Gui.F_Color..Event(UnLoad,F_Color_UnLoad)
+Gui.F_Color.cboColor.Create(ComboBox)
+Gui.F_Color.cboColor.Size(3150,330)
+Gui.F_Color.cboColor.Position(225,195)
+Gui.F_Color.cmdColorSave.Create(Button)
+Gui.F_Color.cmdColorSave.Size(1005,390)
+Gui.F_Color.cmdColorSave.Position(360,765)
+Gui.F_Color.cmdColorSave.Caption("Save")
+Gui.F_Color.cmdColorSave.Event(Click,cmdColorSave_Click)
+Gui.F_Color.lblRowIndex.Create(Label,"",False,885,255,0,1875,840,True,0,"Arial",8,-2147483633,0)
+Gui.Notes..Create
+Gui.Notes..Caption("Notes")
+Gui.Notes..Size(6705,8085)
+Gui.Notes..MinX(0)
+Gui.Notes..MinY(0)
+Gui.Notes..Position(0,0)
+Gui.Notes..BackColor(-2147483633)
+Gui.Notes..MousePointer(0)
+Gui.Notes..Event(UnLoad,Notes_UnLoad)
+Gui.Notes.txtNotes.Create(TextBoxR)
+Gui.Notes.txtNotes.Size(6255,6420)
+Gui.Notes.txtNotes.Position(150,690)
+Gui.Notes.txtNotes.Anchor(15)
+Gui.Notes.cmdSave.Create(Button)
+Gui.Notes.cmdSave.Size(855,375)
+Gui.Notes.cmdSave.Position(135,7215)
+Gui.Notes.cmdSave.Anchor(6)
+Gui.Notes.cmdSave.Caption("Save")
+Gui.Notes.cmdSave.Event(Click,cmdSave_Click)
+Gui.Notes.lbl1.Create(Label,"Parent",True,2550,255,0,180,120,True,0,"Arial",8,-2147483633,0)
+Gui.Notes.txtParent.Create(TextBox,"",True,2580,300,0,165,330,False,0,"Arial",8,-2147483643,1)
+Gui.Notes.lbl2.Create(Label,"Child",True,2550,255,0,2775,75,True,0,"Arial",8,-2147483633,0)
+Gui.Notes.txtChild.Create(TextBox,"",True,2580,300,0,2835,330,False,0,"Arial",8,-2147483643,1)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.dBeg.Declare
+V.Global.dEnd.Declare
+V.Global.dLoadedBeg.Declare
+V.Global.dLoadedBeg.Set(V.Ambient.MinDate)
+
+V.Global.dLastRefresh.Declare
+V.Global.bColorSelector.Declare
+Program.External.Include.Library("GCG_5892_Try_Catch.lib")
+Program.External.Include.Library("300011.lib")
+V.Global.bColorSelector.Set(False)
+v.Global.bInSecurityGroup.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Author BixRB
+'Date 13 Feb 2020
+'GCG_5892_WO_Paint_Dash.g2u
+'Vulcan Industries
+'Dashboard to display painted child work orders on parent jobs
+
+'BN Modified Nov 15 2020, added 2 columns:
+
+F.Intrinsic.Control.Try
+	V.Local.sMessage.Declare
+	V.Local.sIcon.Declare
+	V.Local.sLastRefresh.Declare
+	
+
+	F.Intrinsic.Control.CallSub(dtpTargetDate_Change)
+	
+	V.Global.dLoadedBeg.Set(V.Global.dBeg)
+	
+	F.Intrinsic.String.Build("Loading WO Paint Dashboard{0}{0}Week of: {1} - {2}",V.Ambient.NewLine,V.Global.dBeg.String,V.Global.dEnd.String,V.Local.sMessage)
+	F.Intrinsic.UI.InvokeWaitDialog(V.Local.sMessage,"Loading, Do Not Close")
+	
+	F.Intrinsic.Control.CallSub(LoadDataTable)
+	
+	F.Intrinsic.Control.CallSub(SetupGridView,"Message",V.Local.sMessage)
+	
+	F.Intrinsic.Control.CallSub(Deserialize)
+	
+	F.Intrinsic.UI.CloseWaitDialog
+	
+	F.Intrinsic.String.Build("{0}\gss2.ico",V.Caller.GASDir,V.Local.sIcon)
+	Gui.F_WO_Paint..Icon(V.Local.sIcon)
+	Gui.F_Color..Icon(V.Local.sIcon)
+	
+	F.Intrinsic.String.Format(V.Global.dLastRefresh,"ddddd at ttttt",V.Local.sLastRefresh)
+	F.Intrinsic.String.Build("Last Refreshed: {0}",V.Local.sLastRefresh,V.Local.sLastRefresh)
+	Gui.F_WO_Paint.lblLastRefresh.Caption(V.Local.sLastRefresh)
+	
+	Gui.F_WO_Paint..ContextMenuCreate("ctxDash")
+	Gui.F_WO_Paint..ContextMenuAddItem("ctxDash","Export","","Export")
+	Gui.F_WO_Paint..ContextMenuSetItemEventHandler("ctxDash","Export",ExportData)
+	Gui.F_WO_Paint.gsgcDash.ContextMenuAttach("ctxDash")
+	
+	f.Global.Security.IsInGroup(v.Caller.User,"EDIT5892",V.Caller.CompanyCode,v.Global.bInSecurityGroup)
+	f.Intrinsic.Control.If(v.Global.bInSecurityGroup.Not)
+		gui.Notes.cmdSave.Enabled(False)
+		gui.F_WO_Paint.optEdit.Enabled(False)
+	f.Intrinsic.Control.EndIf
+	
+	Gui.F_WO_Paint..Visible(True)
+	Gui.F_WO_Paint..WindowState(2)
+	gui.F_WO_Paint.optView.Value(1)
+	
+	Gui.F_WO_Paint.timerCheckUpdate.Enabled(True)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.F_WO_Paint_UnLoad.Start
+F.Intrinsic.Control.Try
+
+	F.Intrinsic.Control.CallSub(Serialize)
+	
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.F_WO_Paint_UnLoad.End
+
+Program.Sub.LoadDataTable.Start
+F.Intrinsic.Control.Try
+	V.Local.sSQL.Declare
+	V.Local.sJobList.Declare
+	V.Local.sExpression.Declare	
+	
+	'Get Job_header: open parent and child between Monday and Friday of the week
+	F.Intrinsic.String.Build("select distinct h.JOB from V_JOB_HEADER h left join GCG_5892_Res g on h.Job = g.Job and h.Suffix = g.Suffix where PARENT_WO = '' and PARENT_SUFFIX_PARENT <> '' and DATE_DUE between '{0}' and '{1}' and DATE_CLOSED = '1900-01-01' and (IsNull(Res_Date,'{0}') between '{0}' and  '{1}') Union Select Distinct Job from GCG_5892_Res where Res_Date  between '{0}' and '{1}' ",V.Global.dBeg.PervasiveDate,V.Global.dEnd.PervasiveDate,V.Local.sSQL)
+	'OPENCONNECTION
+	F.ODBC.Connection!con.OpenCompanyConnection
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sJobList)
+	F.Intrinsic.String.Replace(V.Local.sJobList,"#$#","', '",V.Local.sJobList)
+	F.Intrinsic.String.Build("select JOB, SUFFIX, rtrim(PART) as PART, rtrim(LOCATION) as LOC, rtrim(DESCRIPTION) as DESCR, PRODUCT_LINE, QTY_ORDER, QTY_ORDER - QTY_COMPLETED as QTY_OPEN, PARENT_WO, PARENT_SUFFIX_PARENT, DATE_CLOSED, DATE_DUE from V_JOB_HEADER where JOB in ('{0}') Order by Job,Suffix;",V.Local.sJobList,V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtJobHeader","con",V.Local.sSQL)
+	
+	'Get Job_Operations: Parent and child with Material sequences and Paint Labor seqs (LMO = 'L' and Part = 'PSYS')
+	F.Intrinsic.String.Build("select JOB, SUFFIX, SEQ, LMO, rtrim(PART) as PART, rtrim(DESCRIPTION) as DESCR, UM, HOURS_ESTIMATED, HOURS_ACTUAL from V_JOB_OPERATIONS where JOB in ('{0}') and (LMO = 'M' or (LMO = 'L' and PART = 'PSYS' and FLAG_SET_UP <> 'Y')) and SEQ < 995000;",V.Local.sJobList,V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtJobOps","con",V.Local.sSQL,True)
+	
+	'GCG_5892_COLORS
+	F.Data.DataTable.CreateFromSQL("dtColorParts","con","select COLOR_SUFFIX, rtrim(PAINT_PART) as PAINT_PART, rtrim(PAINT_VEND) as PAINT_VEND, rtrim(VENDOR_PART) as VENDOR_PART from GCG_5892_COLORS;")
+	'GCG_5892_LEGACY
+	F.Data.DataTable.CreateFromSQL("dtLegacyRel","con","select rtrim(PARENT_PART) as PARENT_PART, rtrim(CHILD_PART) as CHILD_PART, PAINT, rtrim(COLOR_CHOICE) as COLOR_CHOICE from GCG_5892_LEGACY;")
+	'GCG_5892_CHLDORD
+	F.Data.DataTable.CreateFromSQL("dtPaintOrder","con","select rtrim(PARENT_PART) as PARENT_PART, rtrim(CHILD_PART) as CHILD_PART, PAINT_ORDER from GCG_5892_CHLDORD;")
+	'V_INVENTORY_MSTR
+	F.Data.DataTable.CreateFromSQL("dtInventoryMstr","con","select rtrim(PART) as PART, rtrim(LOCATION) as LOC, QTY_ONHAND from V_INVENTORY_MSTR;")	
+	
+	'Dictionaries
+	'Color
+	F.Data.Dictionary.CreateFromSQL("dictColorSuffixes","con","select COLOR_SUFFIX, COLOR from GCG_5892_COLORS;")	
+	F.Data.Dictionary.CreateFromSQL("dictColors","con","select COLOR, COLOR from GCG_5892_COLORS where COLOR <> '' group by COLOR;")
+	
+	'CLOSECONNECTION
+	F.ODBC.Connection!con.Close
+	
+	
+	V.Global.dLastRefresh.Set(V.Ambient.Now)
+	
+	'Add color dictionary to Color combobox
+	Gui.F_Color.cboColor.AddItems("Dictionary","dictColors")
+	
+	F.Data.DataView.Create("dtJobHeader","dvChild")
+	F.Data.DataView.SetFilter("dtJobHeader","dvChild","PARENT_WO <> ''")
+	F.Data.DataView.Create("dtJobHeader","dvTopLevel")
+	F.Data.DataView.SetFilter("dtJobHeader","dvTopLevel","PARENT_WO = '' and PARENT_SUFFIX_PARENT <> ''")
+	
+	'Get master DataTable before getting info from scheduler
+	F.Data.Linq.Join("LeftJoin","DataView","dtJobHeader","dvChild*!*CHILD","DataView","dtJobHeader","dvTopLevel*!*PARENT","CHILD.PARENT_WO = PARENT.JOB","PARENT.JOB as PARENT_JOB*!*CHILD.PARENT_SUFFIX_PARENT as SUFFIX_PARENT*!*PARENT.PART as PARENT_PART*!*PARENT.LOC as PARENT_LOC*!*PARENT.DESCR as PARENT_DESCR*!*PARENT.QTY_ORDER as PARENT_QTY*!*CHILD.JOB as JOB*!*CHILD.SUFFIX as SUFFIX*!*CHILD.PART*!*CHILD.LOC*!*CHILD.DESCR*!*PARENT.DATE_DUE",,,,"dtParentChildWOs",False)
+	
+	F.Data.Linq.Join("LeftJoin","DataView","dtJobHeader","dvTopLevel*!*CHILD","DataView","dtJobHeader","dvTopLevel*!*PARENT","CHILD.JOB = PARENT.JOB and CHILD.SUFFIX = PARENT.SUFFIX","PARENT.JOB as PARENT_JOB*!*CHILD.PARENT_SUFFIX_PARENT as SUFFIX_PARENT*!*PARENT.PART as PARENT_PART*!*PARENT.LOC as PARENT_LOC*!*PARENT.DESCR as PARENT_DESCR*!*PARENT.QTY_ORDER as PARENT_QTY*!*CHILD.JOB as JOB*!*CHILD.SUFFIX as SUFFIX*!*CHILD.PART*!*CHILD.LOC*!*CHILD.DESCR*!*PARENT.DATE_DUE",,,,"dtParenttoParentWOs",False)
+	
+	F.Data.DataTable.Merge("dtParenttoParentWOs","dtParentChildWOs",True,2)
+	F.Data.DataTable.Close("dtParenttoParentWOs")
+	
+	'F.Data.DataTable.AddExpressionColumn("dtParentChildWOs","PART_SEVEN","String","SUBSTRING(PART, 1, 7)")
+	'F.Data.DataTable.AddExpressionColumn("dtJobOps","PART_SEVEN","String","SUBSTRING(PART, 1, 7)")
+	
+	'F.Intrinsic.String.Build("DATE_DUE >= #{0}# and DATE_DUE <= #{1}#",V.Global.dBeg.String,V.Global.dEnd.String,V.Local.sExpression)
+	v.Local.sExpression.Set("")
+	F.Data.DataView.Create("dtParentChildWOs","dvWeek")
+	F.Data.DataView.SetFilter("dtParentChildWOs","dvWeek",V.Local.sExpression)
+	
+	'User Master table with Parent to Child relationship to build Operations relationship
+	'F.Data.Linq.Join("LeftJoin","DataView","dtParentChildWOs","dvWeek*!*MSTR","DataTable","dtJobOps*!*OPS","MSTR.JOB = OPS.JOB and MSTR.SUFFIX = OPS.SUFFIX and MSTR.PART_SEVEN = OPS.PART_SEVEN","MSTR.PARENT_JOB*!*MSTR.SUFFIX_PARENT*!*MSTR.PARENT_PART*!*MSTR.PARENT_LOC*!*MSTR.PARENT_DESCR*!*MSTR.PARENT_QTY*!*MSTR.JOB*!*MSTR.SUFFIX*!*OPS.PART*!*MSTR.LOC*!*MSTR.DESCR*!*OPS.SEQ*!*OPS.UM*!*OPS.HOURS_ESTIMATED as QTY_TO_PAINT","OPS.LMO = 'M'",,,"dtJobChildMats",False)
+	F.Data.Linq.Join("LeftJoin","DataView","dtParentChildWOs","dvWeek*!*MSTR","DataTable","dtJobOps*!*OPS","MSTR.JOB = OPS.JOB and MSTR.SUFFIX = OPS.SUFFIX","MSTR.PARENT_JOB*!*MSTR.SUFFIX_PARENT*!*MSTR.PARENT_PART*!*MSTR.PARENT_LOC*!*MSTR.PARENT_DESCR*!*MSTR.PARENT_QTY*!*MSTR.JOB*!*MSTR.SUFFIX*!*OPS.PART*!*MSTR.LOC*!*OPS.DESCR*!*OPS.SEQ*!*OPS.UM*!*OPS.HOURS_ESTIMATED as QTY_TO_PAINT*!*MSTR.Date_Due as Original_Date_Due","OPS.LMO = 'M'",,,"dtJobChildMats",False)
+	
+	F.Data.DataTable.AddExpressionColumn("dtJobChildMats","QTY_PER_UNIT","Float","QTY_TO_PAINT / PARENT_QTY")
+	F.Data.DataTable.AddExpressionColumn("dtJobChildMats","COLOR_SUFFIX","String","IIF(SUBSTRING(PARENT_PART, 1, 1) = 'B', SUBSTRING(PART, LEN(PART) - 2, 3), SUBSTRING(PARENT_PART, LEN(PARENT_PART) - 2, 3))")
+	
+	'Get Paint info from Job Operations
+	F.Data.DataView.Create("dtJobOps","dvLabor")
+	F.Data.DataView.SetFilter("dtJobOps","dvLabor","LMO = 'L'")
+	F.Data.Linq.Join("LeftJoin","DataTable","dtJobChildMats*!*MATS","DataView","dtJobOps","dvLabor*!*OPS","MATS.JOB = OPS.JOB and MATS.SUFFIX = OPS.SUFFIX","DataTable","dtColorParts*!*COLOR","MATS.COLOR_SUFFIX = COLOR.COLOR_SUFFIX","DataTable","dtLegacyRel*!*LEGACY","MATS.PARENT_PART = LEGACY.PARENT_PART and MATS.PART = LEGACY.CHILD_PART","DataTable","dtInventoryMstr*!*MSTR","MATS.PART = MSTR.PART and MATS.LOC = MSTR.LOC","DataTable","dtPaintOrder*!*PORD","MATS.PARENT_PART = PORD.PARENT_PART and MATS.PART = PORD.CHILD_PART","MATS.PARENT_JOB*!*MATS.SUFFIX_PARENT*!*MATS.PARENT_PART*!*MATS.PARENT_LOC*!*MATS.PARENT_DESCR*!*MATS.PARENT_QTY*!*MATS.JOB*!*MATS.SUFFIX*!*MATS.PART*!*MATS.LOC*!*MATS.DESCR*!*MATS.SEQ*!*MATS.UM*!*MATS.QTY_PER_UNIT*!*MATS.QTY_TO_PAINT*!*MSTR.QTY_ONHAND*!*OPS.HOURS_ESTIMATED as HOURS_CHILD*!*OPS.HOURS_ACTUAL as HOURS_TOT*!*MATS.COLOR_SUFFIX*!*COLOR.PAINT_PART*!*COLOR.PAINT_VEND*!*COLOR.VENDOR_PART*!*LEGACY.PAINT as PAINT_LEG*!*LEGACY.COLOR_CHOICE as COLOR_LEG*!*PORD.PAINT_ORDER*!*MATS.Original_Date_Due",,,"MATS.JOB asc, MATS.SUFFIX asc","dtRemoveHours",False)
+	
+	F.Data.DataView.Create("dtRemoveHours","dvClean")
+	F.Data.DataView.SetFilter("dtRemoveHours","dvClean","ISNULL(PAINT_LEG, False) = False")
+	F.Data.DataView.SetValue("dtRemoveHours","dvClean",-1,"PAINT_LEG",False)
+	F.Data.DataView.SetFilter("dtRemoveHours","dvClean","ISNULL(COLOR_LEG, '') = ''")
+	F.Data.DataView.SetValue("dtRemoveHours","dvClean",-1,"COLOR_LEG","")
+	F.Data.DataView.SetFilter("dtRemoveHours","dvClean","ISNULL(HOURS_CHILD, -1) <> -1")
+	F.Data.DataView.ToDataTable("dtRemoveHours","dvClean","dtJobChildInfo",True)
+	
+	F.Data.DataTable.AddExpressionColumn("dtJobChildInfo","PIECES_PER_HOUR_CHILD","Float","QTY_TO_PAINT / HOURS_CHILD")
+	F.Data.DataTable.AddColumn("dtJobChildInfo","PIECES_PER_HOUR_CHILD_STR","String")
+	F.Data.DataTable.SetValueFormat("dtJobChildInfo",-1,"PIECES_PER_HOUR_CHILD","PIECES_PER_HOUR_CHILD_STR","0.0000000000")
+	F.Data.DataTable.AddExpressionColumn("dtJobChildInfo","PIECES_PER_HOUR_CHILD_RND","Long","CONVERT(SUBSTRING(PIECES_PER_HOUR_CHILD_STR, 1, LEN(PIECES_PER_HOUR_CHILD_STR) - 11), System.Int64)")
+	
+	'F.Data.DataTable.AddExpressionColumn("dtJobChildInfo","PAINT_REL","Boolean","IIF(SUBSTRING(PARENT_PART, 1, 7) = SUBSTRING(PART, 1, 7), True, False)")
+	F.Data.DataTable.AddColumn("dtJobChildInfo","PAINT_REL","Boolean",False)
+	
+	F.Data.DataTable.AddColumn("dtJobChildInfo","COLOR_ABS","String")
+	F.Data.Dictionary.SetDefaultReturn("dictColorSuffixes","***NORETURN***")
+	F.Data.DataTable.FillFromDictionary("dtJobChildInfo","dictColorSuffixes","COLOR_SUFFIX","COLOR_ABS")
+	
+	F.Data.DataTable.AddColumn("dtJobChildInfo","PAINT","Boolean",False)
+	F.Data.DataTable.AddColumn("dtJobChildInfo","COLOR_CHOICE","String","")
+	F.Data.DataTable.AddExpressionColumn("dtJobChildInfo","COLOR","String","IIF(PAINT, IIF(COLOR_ABS <> '***NORETURN***', IIF(COLOR_CHOICE = '', COLOR_ABS, COLOR_CHOICE), IIF(COLOR_CHOICE = '', 'Could not parse suffix ' + COLOR_SUFFIX, COLOR_CHOICE)), '')")
+	F.Data.DataTable.AddExpressionColumn("dtJobChildInfo","PAINT_PART_V","String","IIF(PAINT, PAINT_PART, '')")
+	F.Data.DataTable.AddExpressionColumn("dtJobChildInfo","PAINT_VEND_V","String","IIF(PAINT, PAINT_VEND, '')")
+	F.Data.DataTable.AddExpressionColumn("dtJobChildInfo","VENDOR_PART_V","String","IIF(PAINT, VENDOR_PART, '')")
+	
+	F.Data.DataTable.Close("dtJobHeader")
+	F.Data.DataTable.Close("dtColorParts")
+	F.Data.DataTable.Close("dtLegacyRel")
+	F.Data.DataTable.Close("dtInventoryMstr")
+	F.Data.DataTable.Close("dtPaintOrder")
+	F.Data.DataTable.Close("dtParentChildWOs")
+	F.Data.DataTable.Close("dtJobChildMats")
+	F.Data.DataTable.Close("dtRemoveHours")
+	F.Data.Dictionary.Close("dictColorSuffixes")
+	
+	F.Data.DataView.Create("dtJobChildInfo","dvColorSuffix")
+	F.Data.DataView.SetSort("dtJobChildInfo","dvColorSuffix","PARENT_JOB asc, PAINT_ORDER asc, SEQ asc")
+	F.Intrinsic.Control.If(V.Screen.F_WO_Paint!chkShowAll.CheckedAsBoolean.Not)
+		F.Data.DataView.SetFilter("dtJobChildInfo","dvColorSuffix","(COLOR_ABS <> '***NORETURN***' or COLOR_CHOICE <> '') and PAINT = True")
+	F.Intrinsic.Control.EndIf
+	
+	'BN, Add column Nov 15 2020
+	f.Data.DataTable.AddExpressionColumn("dtJobChildInfo","JS","String","Job + '-' + SUFFIX_PARENT")
+	f.Data.DataTable.AddColumn("dtJobChildInfo","Res_Date1","Date")
+	f.Data.DataTable.AddColumn("dtJobChildInfo","Res_Date2","Date")
+	
+	F.ODBC.Connection!con.OpenCompanyConnection	
+	f.Data.Dictionary.CreateFromSQL("dictRes","con","Select h.Job + '-' + h.Suffix as JS,If(g.Res_Date is Null,h.Date_Due,g.Res_Date) as Res_Date from v_Job_header h left join gcg_5892_Res g on h.Job = g.Job and h.Suffix = g.suffix")
+	F.ODBC.Connection!con.Close	
+	f.Data.Dictionary.SetDefaultReturn("dictRes","01-01-1900")
+	f.Data.DataTable.FillFromDictionary("dtJobChildInfo","dictRes","JS","Res_Date1")
+	f.Data.DataTable.FillFromDictionary("dtJobChildInfo","dictRes","JS","Res_Date2")
+	f.Data.Dictionary.Close("dictRes")
+	
+	'BN Mar 2021 add custom parent qty
+	f.Data.DataTable.AddColumn("dtJobChildInfo","CustomParentQty1","float",0)
+	F.ODBC.Connection!con.OpenCompanyConnection
+	f.Data.Dictionary.CreateFromSQL("dictCustomParentQty","con","Select Job + '-' + Suffix as JS, Qty from GCG_5892_PCustomQty")
+	F.ODBC.Connection!con.Close	
+	f.Data.Dictionary.SetDefaultReturn("dictCustomParentQty","-9999999.99")
+	f.Data.DataTable.FillFromDictionary("dtJobChildInfo","dictCustomParentQty","JS","CustomParentQty1")
+	f.Data.Dictionary.Close("dictCustomParentQty")
+	
+	f.Data.DataTable.AddExpressionColumn("dtJobChildInfo","CustomParentQty2","Float","IIF(IsNull(CustomParentQty1,0) = -9999999.99,IsNull(Parent_Qty,0),IsNull(CustomParentQty1,0))")
+	f.Data.DataTable.AddColumn("dtJobChildInfo","CustomParentQty","Float",0)	
+	f.Data.DataTable.SetValueFormat("dtJobChildInfo",-1,"CustomParentQty2","CustomParentQty","0")	
+	
+	'BN Mar 2021 Add Custom qty to paint
+	f.Data.DataTable.AddExpressionColumn("dtJobChildInfo","CustomQtyToPaint","float","CustomParentQty * QTY_PER_UNIT")
+	
+	'BN Mar 2021 Add Notes with key: Parent Part + Child Part
+	f.Data.DataTable.AddColumn("dtJobChildInfo","Notes","String","")
+	f.Data.DataTable.AddExpressionColumn("dtJobChildInfo","ParentChild","String","Trim(Parent_Part) + '-' + Trim(Part)")
+	F.ODBC.Connection!con.OpenCompanyConnection
+	f.Data.Dictionary.CreateFromSQL("dictNotes","con","Select Parent_Part + '-' + Child_Part as ParentChild, Notes from GCG_5892_Notes")
+	F.ODBC.Connection!con.Close	
+	f.Data.Dictionary.SetDefaultReturn("dictNotes","")
+	f.Data.DataTable.FillFromDictionary("dtJobChildInfo","dictNotes","ParentChild","Notes")
+	
+	'Custom Estimate Hours
+	f.Data.DataTable.AddExpressionColumn("dtJobChildInfo","CustomEstHours","Float","IIF(PIECES_PER_HOUR_CHILD_RND = 0,0,Qty_To_Paint / PIECES_PER_HOUR_CHILD_RND)")
+	f.Data.DataTable.AddColumn("dtJobChildInfo","CustomEstHoursRunningTotal","Float",0)
+	f.Data.DataTable.RunningTotal("dtJobChildInfo","CustomEstHours",0,"+","CustomEstHoursRunningTotal")
+	
+	f.Data.Dictionary.Close("dictNotes")		
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.LoadDataTable.End
+
+Program.Sub.dtpTargetDate_Change.Start
+F.Intrinsic.Control.Try
+	V.Local.sBegLabel.Declare
+	V.Local.sEndLabel.Declare
+
+	F.Intrinsic.Control.BlockEvents
+	
+	F.Intrinsic.Date.BeginningOfWeek(V.Screen.F_WO_Paint!dtpTargetDate.Value,V.Global.dBeg)
+	'Get Monday date
+	F.Intrinsic.Date.DateAdd("d",1,V.Global.dBeg,V.Global.dBeg)
+	'Get Friday date
+	F.Intrinsic.Date.DateAdd("d",4,V.Global.dBeg,V.Global.dEnd)
+	F.Intrinsic.String.Build("Beginning of Week: {0}",V.Global.dBeg.String,V.Local.sBegLabel)
+	Gui.F_WO_Paint.lblBegWeek.Caption(V.Local.sBegLabel)
+	F.Intrinsic.String.Build("End of Week: {0}",V.Global.dEnd.String,V.Local.sEndLabel)
+	Gui.F_WO_Paint.lblEndWeek.Caption(V.Local.sEndLabel)
+	
+	F.Intrinsic.Control.If(V.Global.dBeg,!=,V.Global.dLoadedBeg,and,V.Global.dLoadedBeg,!=,V.Ambient.MinDate)
+		'Yellow color
+		Gui.F_WO_Paint.cmdRefresh.BackColor(V.Color.Yellow)
+	F.Intrinsic.Control.ElseIf(V.Global.dBeg,=,V.Global.dLoadedBeg)
+		'Control color
+		Gui.F_WO_Paint.cmdRefresh.BackColor(-2147483633)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.UnBlockEvents
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.dtpTargetDate_Change.End
+
+Program.Sub.cmdRefresh_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sMessage.Declare
+	V.Local.sLastRefresh.Declare
+	
+	F.Intrinsic.Control.BlockEvents
+	Gui.F_WO_Paint.timerCheckUpdate.Enabled(False)
+	Gui.F_WO_Paint.gsgcDash.Visible(False)
+	
+	F.Intrinsic.Control.If(V.DataTable.dtJobChildInfo.Exists)
+		F.Intrinsic.Control.CallSub(Serialize)
+		F.Data.DataTable.Close("dtJobChildInfo")
+		F.Data.DataTable.Close("dtJobOps")
+		F.Data.Dictionary.Close("dictColors")
+	F.Intrinsic.Control.EndIf
+	
+	V.Global.dLoadedBeg.Set(V.Global.dBeg)
+	'Control color
+	Gui.F_WO_Paint.cmdRefresh.BackColor(-2147483633)
+	
+	F.Intrinsic.String.Build("Loading WO Paint Dashboard{0}{0}Week of: {1} - {2}",V.Ambient.NewLine,V.Global.dBeg.String,V.Global.dEnd.String,V.Local.sMessage)
+	F.Intrinsic.UI.InvokeWaitDialog(V.Local.sMessage,"Loading, Do Not Close")
+	
+	F.Intrinsic.Control.CallSub(LoadDataTable)
+	
+	F.Intrinsic.Control.CallSub(SetupGridView,"Message",V.Local.sMessage)
+	
+	F.Intrinsic.Control.CallSub(Deserialize)
+	
+	F.Intrinsic.UI.CloseWaitDialog
+	
+	F.Intrinsic.String.Format(V.Global.dLastRefresh,"ddddd at ttttt",V.Local.sLastRefresh)
+	F.Intrinsic.String.Build("Last Refreshed: {0}",V.Local.sLastRefresh,V.Local.sLastRefresh)
+	Gui.F_WO_Paint.lblLastRefresh.Caption(V.Local.sLastRefresh)
+	Gui.F_WO_Paint.lblLastUpdate.Caption("")
+	
+	Gui.F_WO_Paint.gsgcDash.Visible(True)
+	Gui.F_WO_Paint.timerCheckUpdate.Enabled(True)
+	F.Intrinsic.Control.UnBlockEvents
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.SetupGridView.Start
+F.Intrinsic.Control.Try
+	V.Local.iVisibleIndex.Declare
+	V.Local.iPaintIndex.Declare
+	V.Local.iChildPartIndex.Declare
+	V.Local.iCnt.Declare	
+	v.Local.bReadOnly.Declare
+	v.Local.bAllowEdit.Declare
+	
+	Gui.F_WO_Paint.gsgcDash.AddGridviewFromDataView("gvDash","dtJobChildInfo","dvColorSuffix")
+	
+	Gui.F_WO_Paint.gsgcDash.SetGridviewProperty("gvDash","EnterKeyNavigation","Vertical")
+	Gui.F_WO_Paint.gsgcDash.SetGridviewProperty("gvDash","OptionsViewColumnAutoWidth",False)
+	Gui.F_WO_Paint.gsgcDash.SetGridviewProperty("gvDash","OptionsViewShowAutoFilterRow",True)
+	Gui.F_WO_Paint.gsgcDash.SetGridviewProperty("gvDash","ColumnPanelRowHeight","40")
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PIECES_PER_HOUR_CHILD","Visible",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PIECES_PER_HOUR_CHILD","AllowShowHide",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PIECES_PER_HOUR_CHILD_STR","Visible",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PIECES_PER_HOUR_CHILD_STR","AllowShowHide",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_REL","Visible",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_REL","AllowShowHide",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","COLOR_SUFFIX","Visible",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","COLOR_SUFFIX","AllowShowHide",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","COLOR_ABS","Visible",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","COLOR_ABS","AllowShowHide",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","COLOR_CHOICE","Visible",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","COLOR_CHOICE","AllowShowHide",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_PART","Visible",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_PART","AllowShowHide",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_VEND","Visible",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_VEND","AllowShowHide",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","VENDOR_PART","Visible",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","VENDOR_PART","AllowShowHide",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_LEG","Visible",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_LEG","AllowShowHide",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","COLOR_LEG","Visible",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","COLOR_LEG","AllowShowHide",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SUFFIX_PARENT","Visible",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SUFFIX_PARENT","AllowShowHide",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_LOC","Visible",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_LOC","AllowShowHide",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","LOC","Visible",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","LOC","AllowShowHide",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","JS","Visible",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","JS","AllowShowHide",False)	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Res_Date2","Visible",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Res_Date2","AllowShowHide",False)	
+	
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomParentQty1","Visible",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomParentQty1","AllowShowHide",False)	
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomParentQty2","Visible",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomParentQty2","AllowShowHide",False)	
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_TO_PAINT","Visible",False)	
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","ParentChild","Visible",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","ParentChild","AllowShowHide",False)	
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT","AllowEdit",False)
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_JOB","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_PART","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_DESCR","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_QTY","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","JOB","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SUFFIX","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PART","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","DESCR","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SEQ","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","UM","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_PER_UNIT","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_TO_PAINT","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_ONHAND","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","HOURS_CHILD","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","HOURS_TOT","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PIECES_PER_HOUR_CHILD_RND","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_PART_V","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_VEND_V","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","VENDOR_PART_V","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","COLOR","AllowEdit",False)
+	
+	f.Intrinsic.Control.If(v.Global.bInSecurityGroup)
+		v.Local.bAllowEdit.Set(True)
+		v.Local.bReadOnly.Set(False)	
+	f.Intrinsic.Control.Else
+		v.Local.bAllowEdit.Set(False)
+		v.Local.bReadOnly.Set(True)
+	f.Intrinsic.Control.EndIf
+
+	'''affected by security group
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Res_Date1","AllowEdit",v.Local.bAllowEdit)	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Res_Date1","ReadOnly",v.Local.bReadOnly)
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_ORDER","ReadOnly",v.Local.bReadOnly)
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomParentQty","AllowEdit",v.Local.bAllowEdit)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomParentQty","ReadOnly",v.Local.bReadOnly)		
+	'''End affected by security group
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Notes","AllowEdit",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Notes","ReadOnly",True)	
+	
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Notes","ToolTip","Notes with key Parent and Child Part")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomEstHours","ToolTip","Qty To Paint / Pieces per Hours")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomEstHoursRunningTotal","ToolTip","Running Total for Custom Est. Hours")
+	
+	V.Local.iVisibleIndex.Set(-1)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_ORDER","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_JOB","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_PART","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_DESCR","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_QTY","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomParentQty","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","JOB","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SUFFIX","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PART","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","DESCR","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SEQ","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","UM","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomQtyToPaint","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_TO_PAINT","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_ONHAND","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_PER_UNIT","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","HOURS_CHILD","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomEstHours","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomEstHoursRunningTotal","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","HOURS_TOT","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PIECES_PER_HOUR_CHILD_RND","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Notes","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_PART_V","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_VEND_V","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","VENDOR_PART_V","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","COLOR","VisibleIndex",V.Local.iVisibleIndex.++)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Original_Date_Due","VisibleIndex",V.Local.iVisibleIndex.++)
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Notes","CellBackColor","Beige")
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT","ShowCaption",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_ORDER","Caption","Order")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_JOB","Caption","Parent WO")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_PART","Caption","Parent Part")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_DESCR","Caption","Parent Desc.")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_QTY","Caption","Parent WO Qty")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","JOB","Caption","Paint WO")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SUFFIX","Caption","Paint Suffix")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PART","Caption","Child Part")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","DESCR","Caption","Child Desc.")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SEQ","Caption","Child WO Seq")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","UM","Caption","Child UM")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_PER_UNIT","Caption","Qty per Unit")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_TO_PAINT","Caption","Qty to Paint")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_ONHAND","Caption","Child RM on Hand")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","HOURS_CHILD","Caption","Est. Hours")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","HOURS_TOT","Caption","Actual Hours")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PIECES_PER_HOUR_CHILD_RND","Caption","Pieces/Hr")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_PART_V","Caption","Paint Part")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_VEND_V","Caption","Paint Vendor")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","VENDOR_PART_V","Caption","Vendor Part")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","COLOR","Caption","Color")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Original_Date_Due","Caption","Org. Parent Due")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Res_Date1","Caption","Custom Rescheduled")
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomParentQty","Caption","Custom Parent Qty")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomQtyToPaint","Caption","Custom Qty To Paint")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Notes","Caption","Notes")	
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomEstHours","Caption","Custom Est. Hours")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomEstHoursRunningTotal","Caption","Custom Running Total for Est. Hours")	
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT","Width",1)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT","AllowSize",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT","AllowShowHide",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_ORDER","Width",45)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_ORDER","AllowShowHide",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_JOB","Width",80)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_PART","Width",110)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_DESCR","Width",200)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_QTY","Width",110)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","JOB","Width",70)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SUFFIX","Width",80)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PART","Width",110)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","DESCR","Width",200)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SEQ","Width",100)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","UM","Width",70)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_PER_UNIT","Width",100)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_TO_PAINT","Width",95)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_ONHAND","Width",120)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","HOURS_CHILD","Width",80)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","HOURS_TOT","Width",140)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PIECES_PER_HOUR_CHILD_RND","Width",85)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_PART_V","Width",110)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_VEND_V","Width",150)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","VENDOR_PART_V","Width",110)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","COLOR","Width",140)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","COLOR","AllowShowHide",False)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Original_Date_Due","Width",85)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Res_Date1","Width",85)
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_ORDER","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_JOB","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_PART","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_DESCR","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_QTY","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","JOB","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SUFFIX","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PART","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","DESCR","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SEQ","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","UM","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_PER_UNIT","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_TO_PAINT","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_ONHAND","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","HOURS_CHILD","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","HOURS_TOT","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PIECES_PER_HOUR_CHILD_RND","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_PART_V","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_VEND_V","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","VENDOR_PART_V","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","COLOR","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Original_Date_Due","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Res_Date1","HeaderFontBold",True)
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomParentQty","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomQtyToPaint","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Notes","HeaderFontBold",True)	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomEstHours","HeaderFontBold",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomEstHoursRunningTotal","HeaderFontBold",True)	
+	
+	
+	'HeaderWordWrap
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_ORDER","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_JOB","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_PART","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_DESCR","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_QTY","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","JOB","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SUFFIX","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PART","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","DESCR","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SEQ","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","UM","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_PER_UNIT","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_TO_PAINT","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_ONHAND","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","HOURS_CHILD","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","HOURS_TOT","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PIECES_PER_HOUR_CHILD_RND","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_PART_V","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_VEND_V","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","VENDOR_PART_V","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","COLOR","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Original_Date_Due","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Res_Date1","HeaderWordWrap","Wrap")
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomParentQty","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomQtyToPaint","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Notes","HeaderWordWrap","Wrap")	
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomEstHours","HeaderWordWrap","Wrap")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomEstHoursRunningTotal","HeaderWordWrap","Wrap")		
+	
+	'HeaderVAlignment
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_ORDER","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_JOB","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_PART","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_DESCR","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_QTY","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","JOB","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SUFFIX","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PART","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","DESCR","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SEQ","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","UM","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_PER_UNIT","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_TO_PAINT","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_ONHAND","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","HOURS_CHILD","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","HOURS_TOT","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PIECES_PER_HOUR_CHILD_RND","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_PART_V","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_VEND_V","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","VENDOR_PART_V","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","COLOR","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Original_Date_Due","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Res_Date1","HeaderVAlignment","Top")
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomParentQty","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomQtyToPaint","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Notes","HeaderVAlignment","Top")
+
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomEstHours","HeaderVAlignment","Top")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomEstHoursRunningTotal","HeaderVAlignment","Top")
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_ORDER","HeaderHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_JOB","HeaderHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_PART","HeaderHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_QTY","HeaderHAlignment","Far")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","JOB","HeaderHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SUFFIX","HeaderHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PART","HeaderHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SEQ","HeaderHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","UM","HeaderHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_PER_UNIT","HeaderHAlignment","Far")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_TO_PAINT","HeaderHAlignment","Far")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_ONHAND","HeaderHAlignment","Far")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","HOURS_CHILD","HeaderHAlignment","Far")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","HOURS_TOT","HeaderHAlignment","Far")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PIECES_PER_HOUR_CHILD_RND","HeaderHAlignment","Far")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_PART_V","HeaderHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","VENDOR_PART_V","HeaderHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Original_Date_Due","HeaderHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Res_Date1","HeaderHAlignment","Center")
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_ORDER","CellHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_JOB","CellHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_PART","CellHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","JOB","CellHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SUFFIX","CellHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PART","CellHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","SEQ","CellHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","UM","CellHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_PART_V","CellHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","VENDOR_PART_V","CellHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Original_Date_Due","CellHAlignment","Center")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Res_Date1","CellHAlignment","Center")
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_PART","CellForeColor",V.Color.Blue)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PART","CellForeColor",V.Color.Blue)
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT","Fixed","Left")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PAINT_ORDER","Fixed","Left")
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_QTY","EditMaskType","Numeric")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_QTY","EditMask","#,###,##0")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PARENT_QTY","EditMaskAsDisplayFormat",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_PER_UNIT","EditMaskType","Numeric")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_PER_UNIT","EditMask","#,###,##0")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_PER_UNIT","EditMaskAsDisplayFormat",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_TO_PAINT","EditMaskType","Numeric")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_TO_PAINT","EditMask","#,###,##0")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_TO_PAINT","EditMaskAsDisplayFormat",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_ONHAND","EditMaskType","Numeric")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_ONHAND","EditMask","#,###,##0")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","QTY_ONHAND","EditMaskAsDisplayFormat",True)
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PIECES_PER_HOUR_CHILD_RND","EditMaskType","Numeric")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PIECES_PER_HOUR_CHILD_RND","EditMask","#,###,##0")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","PIECES_PER_HOUR_CHILD_RND","EditMaskAsDisplayFormat",True)
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Original_Date_Due","DisplayCustomDatetime","d")	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Res_Date1","DisplayCustomDatetime","d")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","Res_Date2","DisplayCustomDatetime","d")	
+	
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomEstHours","DisplayCustomNumeric","###,###,###,##0.0")
+	Gui.F_WO_Paint.gsgcDash.SetColumnProperty("gvDash","CustomEstHoursRunningTotal","DisplayCustomNumeric","###,###,###,##0.0")
+	
+	'Can't use addexpressioncolumn to add the PAINT column because it needs to be editable when its clicked
+	Gui.F_WO_Paint.gsgcDash.GetColumnIndexByName("gvDash","PAINT",V.Local.iPaintIndex)
+	Gui.F_WO_Paint.gsgcDash.GetColumnIndexByName("gvDash","PART",V.Local.iChildPartIndex)
+	F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.dtJobChildInfo.RowCount--,1)
+		F.Intrinsic.UI.ChangeWaitStatus(V.Args.Message,V.Local.iCnt,0,V.DataTable.dtJobChildInfo.RowCount--)
+		F.Intrinsic.Control.If(V.DataTable.dtJobChildInfo(V.Local.iCnt).PAINT_REL!FieldVal)
+			F.Data.DataTable.SetValue("dtJobChildInfo",V.Local.iCnt,"PAINT",True)
+			Gui.F_WO_Paint.gsgcDash.SetCellAppearance("gvDash",V.Local.iPaintIndex,V.Local.iCnt,"BackColor","LightGray")
+		F.Intrinsic.Control.ElseIf(V.DataTable.dtJobChildInfo(V.Local.iCnt).PAINT_LEG!FieldVal)
+			F.Data.DataTable.SetValue("dtJobChildInfo",V.Local.iCnt,"PAINT",True,"COLOR_CHOICE",V.DataTable.dtJobChildInfo(V.Local.iCnt).COLOR_LEG!FieldVal)
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.If(V.DataTable.dtJobChildInfo(V.Local.iCnt).QTY_TO_PAINT!FieldVal,>,V.DataTable.dtJobChildInfo(V.Local.iCnt).QTY_ONHAND!FieldVal)
+			Gui.F_WO_Paint.gsgcDash.SetCellAppearance("gvDash",V.Local.iChildPartIndex,V.Local.iCnt,"BackColor","Yellow")
+		F.Intrinsic.Control.EndIf
+		Gui.F_WO_Paint.gsgcDash.SetCellAppearance("gvDash",V.Local.iChildPartIndex,V.Local.iCnt,"HAlignment","Center")
+		Gui.F_WO_Paint.gsgcDash.SetCellAppearance("gvDash",V.Local.iChildPartIndex,V.Local.iCnt,"ForeColor","Blue")
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+	
+	Gui.F_WO_Paint.gsgcDash.MainView("gvDash")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.SetupGridView.End
+
+Program.Sub.gsgcDash_RowCellClick.Start
+V.Local.sSQL.Declare
+v.Local.sRet.Declare
+v.Local.sParent.Declare
+v.Local.sChild.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Args.Clicks,=,1,and,V.Args.Button.UCase,=,"LEFT")
+	F.Intrinsic.Control.BlockEvents
+	F.Intrinsic.Control.SelectCase(V.Args.Column.UCase)
+		F.Intrinsic.Control.Case("PAINT")
+			f.Intrinsic.Control.If(v.Screen.F_WO_Paint!optView.Value)
+				F.Intrinsic.Control.UnBlockEvents
+				f.Intrinsic.UI.Msgbox("You are in View Mode. No change is made","Attention")
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf	
+		
+			'Check if relationship is locked in by PAINT_REL, if it isn't, invert the checkbox
+			F.Intrinsic.Control.If(V.DataTable.dtJobChildInfo(V.Args.RowIndex).PAINT_REL!FieldValNot)
+				F.Intrinsic.String.Build("select PAINT from GCG_5892_LEGACY where PARENT_PART = '{0}' and CHILD_PART = '{1}';",V.DataTable.dtJobChildInfo(V.Args.RowIndex).PARENT_PART!FieldVal,V.DataTable.dtJobChildInfo(V.Args.RowIndex).PART!FieldVal,V.Local.sSQL)
+				F.ODBC.Connection!con.OpenCompanyConnection
+				F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+				F.ODBC.Connection!con.Close
+				F.Intrinsic.Control.If(V.Args.CellValue,=,True,and,V.Ambient.ExecuteAndReturnEOF,=,False)
+					'delete from table and blank out color_choice
+					F.Intrinsic.String.Build("delete from GCG_5892_LEGACY where PARENT_PART = '{0}' and CHILD_PART = '{1}';",V.DataTable.dtJobChildInfo(V.Args.RowIndex).PARENT_PART!FieldVal,V.DataTable.dtJobChildInfo(V.Args.RowIndex).PART!FieldVal,V.Local.sSQL)
+					F.ODBC.Connection!con.OpenCompanyConnection
+					F.ODBC.Connection!con.Execute(V.Local.sSQL)
+					F.ODBC.Connection!con.Close
+					F.Intrinsic.Control.CallSub(SendUpdate)
+					F.Data.DataTable.SetValue("dtJobChildInfo",V.Args.RowIndex,"PAINT",False,"COLOR_CHOICE","")
+				F.Intrinsic.Control.ElseIf(V.Args.CellValue,=,True,and,V.Ambient.ExecuteAndReturnEOF,=,True)
+					'record is already deleted, blank out color_ choice
+					F.Data.DataTable.SetValue("dtJobChildInfo",V.Args.RowIndex,"PAINT",False,"COLOR_CHOICE","")
+				F.Intrinsic.Control.ElseIf(V.Args.CellValue,=,False,and,V.Ambient.ExecuteAndReturnEOF,=,True)
+					'fill in paint checkbox and add to table
+					F.Intrinsic.String.Build("insert into GCG_5892_LEGACY (PARENT_PART, CHILD_PART, PAINT, COLOR_CHOICE) values ('{0}', '{1}', 1, '');",V.DataTable.dtJobChildInfo(V.Args.RowIndex).PARENT_PART!FieldVal,V.DataTable.dtJobChildInfo(V.Args.RowIndex).PART!FieldVal,V.Local.sSQL)
+					F.ODBC.Connection!con.OpenCompanyConnection
+					F.ODBC.Connection!con.Execute(V.Local.sSQL)
+					F.ODBC.Connection!con.Close
+					F.Intrinsic.Control.CallSub(SendUpdate)
+					F.Data.DataTable.SetValue("dtJobChildInfo",V.Args.RowIndex,"PAINT",True)
+				F.Intrinsic.Control.ElseIf(V.Args.CellValue,=,False,and,V.Ambient.ExecuteAndReturnEOF,=,False)
+					'record is already in table, fill in paint checkbox
+					F.Data.DataTable.SetValue("dtJobChildInfo",V.Args.RowIndex,"PAINT",True)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+			
+		F.Intrinsic.Control.Case("COLOR")			
+			f.Intrinsic.Control.If(v.Screen.F_WO_Paint!optView.Value)
+				F.Intrinsic.Control.UnBlockEvents
+				f.Intrinsic.UI.Msgbox("You are in View Mode. No change is made","Attention")
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf		
+		
+			'Bring up prompt to change the color of this row if the paint isn't based on the Parent to Child relationship
+			F.Intrinsic.Control.If(v.DataTable.dtJobChildInfo(V.Args.RowIndex).PAINT_REL!FieldVal,=,False,and,V.DataTable.dtJobChildInfo(V.Args.RowIndex).PAINT!FieldVal,=,True)
+				Gui.F_WO_Paint..Enabled(False)
+				
+				Gui.F_Color.cboColor.Text(V.Args.CellValue)
+				Gui.F_Color.lblRowIndex.Caption(V.Args.RowIndex)
+				F.Intrinsic.Control.UnBlockEvents
+				F.Intrinsic.Control.If(V.Global.bColorSelector)
+					Gui.F_Color..Visible(True)
+				F.Intrinsic.Control.Else
+					Gui.F_Color..Visible(True)
+					V.Global.bColorSelector.Set(True)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Case("PARENT_PART")
+			'Open S&D screen
+			F.Data.DataTable.AddRow("300011","Part",V.Args.CellValue,"Location",V.DataTable.dtJobChildInfo(V.Args.RowIndex).PARENT_LOC!FieldVal,"Switch","")
+			Gui.F_WO_Paint..Enabled(False)
+			F.Intrinsic.Control.CallSub(300011Sync)
+			Gui.F_WO_Paint..Enabled(True)
+			Gui.F_WO_Paint..SetFocus
+		F.Intrinsic.Control.Case("PART")
+			'Open S&D screen
+			F.Data.DataTable.AddRow("300011","Part",V.Args.CellValue,"Location",V.DataTable.dtJobChildInfo(V.Args.RowIndex).LOC!FieldVal,"Switch","")
+			Gui.F_WO_Paint..Enabled(False)
+			F.Intrinsic.Control.CallSub(300011Sync)
+			Gui.F_WO_Paint..Enabled(True)
+			Gui.F_WO_Paint..SetFocus
+			
+		F.Intrinsic.Control.Case("NOTES")
+			v.Local.sParent.Set(v.DataTable.dtJobChildInfo(v.Args.RowIndex).Parent_Part!FieldValTrim)
+			v.Local.sChild.Set(v.DataTable.dtJobChildInfo(v.Args.RowIndex).Part!FieldValTrim)
+		
+			f.Intrinsic.String.Build("Select Top 1 Notes from GCG_5892_Notes where Parent_part = '{0}' and Child_part = '{1}'",v.Local.sParent.PSQLFriendly,v.Local.sChild.PSQLFriendly,v.Local.sSQL)
+			F.ODBC.Connection!con.OpenCompanyConnection
+			f.ODBC.Connection!Con.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+			f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+				gui.Notes.txtNotes.Text(v.Local.sRet)
+			f.Intrinsic.Control.Else
+				gui.Notes.txtNotes.Text("")	
+			f.Intrinsic.Control.EndIf			
+			F.ODBC.Connection!con.Close	
+			gui.Notes.txtParent.Text(v.Local.sParent)
+			gui.Notes.txtChild.Text(v.Local.sChild)
+			gui.Notes..Visible(True)
+					
+	F.Intrinsic.Control.EndSelect
+	F.Intrinsic.Control.UnBlockEvents
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.gsgcDash_RowCellClick.End
+
+Program.Sub.chkShowAll_Click.Start
+F.Intrinsic.Control.Try
+
+Gui.F_WO_Paint..Enabled(False)
+'Gui.F_WO_Paint.gsgcDash.SuspendLayout
+F.Intrinsic.Control.If(V.Screen.F_WO_Paint!chkShowAll.CheckedAsBoolean)
+	'Show all
+	F.Data.DataView.SetFilter("dtJobChildInfo","dvColorSuffix","")
+F.Intrinsic.Control.Else
+	'Show only suffixed parents
+	F.Data.DataView.SetFilter("dtJobChildInfo","dvColorSuffix","(COLOR_ABS <> '***NORETURN***' or COLOR_CHOICE <> '') and PAINT = True")
+F.Intrinsic.Control.EndIf
+'Gui.F_WO_Paint.gsgcDash.ResumeLayout
+Gui.F_WO_Paint..SetFocus
+Gui.F_WO_Paint..Enabled(True)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.chkShowAll_Click.End
+
+Program.Sub.cmdColorSave_Click.Start
+V.Local.sColor.Declare
+V.Local.sSQL.Declare
+F.Intrinsic.Control.Try
+
+Gui.F_Color..Visible(False)
+
+V.Local.sColor.Set(V.Screen.F_Color!cboColor.Text.Trim)
+F.Intrinsic.Control.If(V.Local.sColor.Left23,=,"Could not parse suffix ")
+	V.Local.sColor.Set("")
+F.Intrinsic.Control.EndIf
+
+'Update color in database if it doesn't hold a strong relationship
+F.Intrinsic.Control.If(V.DataTable.dtJobChildInfo(V.Screen.F_Color!lblRowIndex.Caption).PAINT_REL!FieldValNot)
+	F.Intrinsic.String.Build("select COLOR_CHOICE from GCG_5892_LEGACY where PARENT_PART = '{0}' and CHILD_PART = '{1}';",V.DataTable.dtJobChildInfo(V.Screen.F_Color!lblRowIndex.Caption).PARENT_PART!FieldVal,V.DataTable.dtJobChildInfo(V.Screen.F_Color!lblRowIndex.Caption).PART!FieldVal,V.Local.sSQL)
+	F.ODBC.Connection!con.OpenCompanyConnection
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+		'insert
+		F.Intrinsic.String.Build("insert into GCG_5892_LEGACY (PARENT_PART, CHILD_PART, PAINT, COLOR_CHOICE) values ('{0}', '{1}', 1, '{2}');",V.DataTable.dtJobChildInfo(V.Screen.F_Color!lblRowIndex.Caption).PARENT_PART!FieldVal,V.DataTable.dtJobChildInfo(V.Screen.F_Color!lblRowIndex.Caption).PART!FieldVal,V.Local.sColor,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.CallSub(SendUpdate)
+	F.Intrinsic.Control.ElseIf(V.Local.sSQL,!=,V.Local.sColor.Trim)
+		'update, but only if it needs updating
+		F.Intrinsic.String.Build("update GCG_5892_LEGACY set COLOR_CHOICE = '{2}' where PARENT_PART = '{0}' and CHILD_PART = '{1}';",V.DataTable.dtJobChildInfo(V.Screen.F_Color!lblRowIndex.Caption).PARENT_PART!FieldVal,V.DataTable.dtJobChildInfo(V.Screen.F_Color!lblRowIndex.Caption).PART!FieldVal,V.Local.sColor,V.Local.sSQL)
+		F.ODBC.Connection!con.Execute(V.Local.sSQL)
+		F.Intrinsic.Control.CallSub(SendUpdate)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!con.Close
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.SetValue("dtJobChildInfo",V.Screen.F_Color!lblRowIndex.Caption,"COLOR_CHOICE",V.Local.sColor)
+
+Gui.F_WO_Paint..SetFocus
+Gui.F_WO_Paint..Enabled(True)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdColorSave_Click.End
+
+Program.Sub.F_Color_UnLoad.Start
+F.Intrinsic.Control.Try
+
+Gui.F_Color..Visible(False)
+
+Gui.F_WO_Paint..SetFocus
+Gui.F_WO_Paint..Enabled(True)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.F_Color_UnLoad.End
+
+Program.Sub.Deserialize.Start
+V.Local.Serialize.Declare
+F.Intrinsic.Control.Try
+
+'GridView - gvDash
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"gvDash",5892,1000,6,"",V.Local.Serialize)
+F.Intrinsic.Control.If(V.Local.Serialize.Trim,<>,"")
+	Gui.F_WO_Paint.gsgcDash.Deserialize(V.Local.Serialize)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.Serialize.Start
+V.Local.Serialize.Declare
+F.Intrinsic.Control.Try
+
+'GridView - gvDash
+Gui.F_WO_Paint.gsgcDash.Serialize("gvDash",V.Local.Serialize)
+F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"gvDash",5892,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.Serialize)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.gsgcDash_CellValueChanged.Start
+F.Intrinsic.Control.Try
+	V.Local.sSQL.Declare
+	v.Local.dDate.Declare
+	v.Local.iHold.Declare
+	v.Local.sRet.Declare
+	
+	f.Intrinsic.Control.If(v.Screen.F_WO_Paint!optView.Value)
+		f.Intrinsic.UI.Msgbox("You are in View Mode. No change is made","Attention")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.SelectCase(V.Args.Column.UCase)
+		F.Intrinsic.Control.Case("PAINT_ORDER")
+			F.Intrinsic.Control.If(V.Args.Value,=,V.Ambient.Null)
+				F.Intrinsic.String.Build("select PAINT_ORDER from GCG_5892_CHLDORD where PARENT_PART = '{0}' and CHILD_PART = '{1}';",V.DataTable.dtJobChildInfo(V.Args.RowIndex).PARENT_PART!FieldVal,V.DataTable.dtJobChildInfo(V.Args.RowIndex).PART!FieldVal,V.Local.sSQL)
+				F.ODBC.Connection!con.OpenCompanyConnection
+				F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+				F.ODBC.Connection!con.Close
+				F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF.Not)
+					'return, delete
+					F.Intrinsic.String.Build("delete from GCG_5892_CHLDORD where PARENT_PART = '{0}' and CHILD_PART = '{1}';",V.DataTable.dtJobChildInfo(V.Args.RowIndex).PARENT_PART!FieldVal,V.DataTable.dtJobChildInfo(V.Args.RowIndex).PART!FieldVal,V.Local.sSQL)
+					F.ODBC.Connection!con.OpenCompanyConnection
+					F.ODBC.Connection!con.Execute(V.Local.sSQL)
+					F.ODBC.Connection!con.Close
+					F.Intrinsic.Control.CallSub(SendUpdate)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.ElseIf(V.Args.Value,<=,0)
+				F.Data.DataTable.SetValue("dtJobChildInfo",V.Args.RowIndex,"PAINT_ORDER",V.Ambient.DBNull)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("select PAINT_ORDER from GCG_5892_CHLDORD where PARENT_PART = '{0}' and CHILD_PART = '{1}';",V.DataTable.dtJobChildInfo(V.Args.RowIndex).PARENT_PART!FieldVal,V.DataTable.dtJobChildInfo(V.Args.RowIndex).PART!FieldVal,V.Local.sSQL)
+				F.ODBC.Connection!con.OpenCompanyConnection
+				F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+				F.ODBC.Connection!con.Close
+				F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+					'no return, insert
+					F.Intrinsic.String.Build("insert into GCG_5892_CHLDORD (PARENT_PART, CHILD_PART, PAINT_ORDER) values ('{0}', '{1}', {2});",V.DataTable.dtJobChildInfo(V.Args.RowIndex).PARENT_PART!FieldVal,V.DataTable.dtJobChildInfo(V.Args.RowIndex).PART!FieldVal,V.Args.Value.String,V.Local.sSQL)
+					F.ODBC.Connection!con.OpenCompanyConnection
+					F.ODBC.Connection!con.Execute(V.Local.sSQL)
+					F.ODBC.Connection!con.Close
+					F.Intrinsic.Control.CallSub(SendUpdate)
+				F.Intrinsic.Control.ElseIf(V.Local.sSQL,!=,V.Args.Value)
+					'return, new value, update
+					F.Intrinsic.String.Build("update GCG_5892_CHLDORD set PAINT_ORDER = {0} where PARENT_PART = '{1}' and CHILD_PART = '{2}';",V.Args.Value.String,V.DataTable.dtJobChildInfo(V.Args.RowIndex).PARENT_PART!FieldVal,V.DataTable.dtJobChildInfo(V.Args.RowIndex).PART!FieldVal,V.Local.sSQL)
+					F.ODBC.Connection!con.OpenCompanyConnection
+					F.ODBC.Connection!con.Execute(V.Local.sSQL)
+					F.ODBC.Connection!con.Close
+					F.Intrinsic.Control.CallSub(SendUpdate)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Case("RES_DATE1")
+			'Validate if from Mon to Friday			
+			v.Local.dDate.Set(V.DataTable.dtJobChildInfo(V.Args.RowIndex).Res_Date1!FieldValString)
+			Function.Intrinsic.Date.Weekday (v.Local.dDate,v.Local.iHold)
+			f.Intrinsic.Control.If(v.Local.iHold,=,1,or,v.Local.iHold,=,7)
+				f.Intrinsic.UI.Msgbox("Not allowed to select Saturday or Sunday.","Invalid Date Selection")
+				f.Data.DataTable.SetValue("dtJobChildInfo",v.Args.RowIndex,"RES_DATE1",v.DataTable.dtJobChildInfo(v.Args.RowIndex).Res_Date2!FieldValString)
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.String.Build("Select Job from GCG_5892_Res where Job = '{0}' and Suffix = '{1}'",v.DataTable.dtJobChildInfo(v.Args.RowIndex).Job!FieldValString,v.DataTable.dtJobChildInfo(v.Args.RowIndex).Suffix_Parent!FieldValString,v.Local.sSQL)
+			F.ODBC.Connection!con.OpenCompanyConnection
+			f.ODBC.Connection!Con.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+			f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+				f.Intrinsic.String.Build("Insert into GCG_5892_Res (Job,Suffix,JS,Res_Date) values ('{0}','{1}','{0}-{1}','{2}')",v.DataTable.dtJobChildInfo(v.Args.RowIndex).Job!FieldValString,v.DataTable.dtJobChildInfo(v.Args.RowIndex).Suffix_Parent!FieldValString,v.Local.dDate.PervasiveDate,v.Local.sSQL)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.String.Build("Update GCG_5892_Res set Res_Date = '{2}' where Job = '{0}' and Suffix = '{1}'",v.DataTable.dtJobChildInfo(v.Args.RowIndex).Job!FieldValString,v.DataTable.dtJobChildInfo(v.Args.RowIndex).Suffix_Parent!FieldValString,v.Local.dDate.PervasiveDate,v.Local.sSQL)			
+			f.Intrinsic.Control.EndIf
+			f.ODBC.Connection!con.Execute(v.Local.sSQL)
+			
+			f.Data.DataTable.SetValue("dtJobChildInfo",v.Args.RowIndex,"Res_Date2",v.Local.dDate)
+			
+			F.ODBC.Connection!con.Close	
+			
+		f.Intrinsic.Control.Case("CUSTOMPARENTQTY")
+			f.Intrinsic.String.Build("Select Job from GCG_5892_PCustomQty where Job = '{0}' and Suffix = '{1}'",v.DataTable.dtJobChildInfo(v.Args.RowIndex).Parent_Job!FieldValString,v.DataTable.dtJobChildInfo(v.Args.RowIndex).Suffix_Parent!FieldValString,v.Local.sSQL)
+			F.ODBC.Connection!con.OpenCompanyConnection
+			f.ODBC.Connection!Con.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+			f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+				f.Intrinsic.String.Build("Insert into GCG_5892_PCustomQty (Job,Suffix,Qty) values ('{0}','{1}','{2}')",v.DataTable.dtJobChildInfo(v.Args.RowIndex).Parent_Job!FieldValString,v.DataTable.dtJobChildInfo(v.Args.RowIndex).Suffix_Parent!FieldValString,v.DataTable.dtJobChildInfo(v.Args.RowIndex).CustomParentQty!FieldValString,v.Local.sSQL)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.String.Build("Update GCG_5892_PCustomQty set Qty = '{2}' where Job = '{0}' and Suffix = '{1}'",v.DataTable.dtJobChildInfo(v.Args.RowIndex).Parent_Job!FieldValString,v.DataTable.dtJobChildInfo(v.Args.RowIndex).Suffix_Parent!FieldValString,v.DataTable.dtJobChildInfo(v.Args.RowIndex).CustomParentQty!FieldValString,v.Local.sSQL)		
+			f.Intrinsic.Control.EndIf
+			f.ODBC.Connection!con.Execute(v.Local.sSQL)
+			F.ODBC.Connection!con.Close				
+			
+	F.Intrinsic.Control.EndSelect
+	f.Data.DataTable.AcceptChanges("dtJobChildInfo")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.gsgcDash_CellValueChanged.End
+
+Program.Sub.SendUpdate.Start
+V.Local.sSQL.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.String.Build("select WEEK_BEG, LAST_UPDATE, LAST_USER from GCG_5892_UPDATES where WEEK_BEG = '{0}';",V.Global.dLoadedBeg.PervasiveDate,V.Local.sSQL)
+F.ODBC.Connection!conupdate.OpenCompanyConnection
+F.Data.DataTable.CreateFromSQL("dtUpdate","conupdate",V.Local.sSQL)
+F.ODBC.Connection!conupdate.Close
+
+F.Intrinsic.Control.If(V.DataTable.dtUpdate.RowCount,=,0)
+	'add new row
+	F.Data.DataTable.AddRow("dtUpdate","WEEK_BEG",V.Global.dLoadedBeg,"LAST_UPDATE",V.Ambient.Now,"LAST_USER",V.Caller.User)
+F.Intrinsic.Control.Else
+	'edit row
+	F.Data.DataTable.SetValue("dtUpdate",0,"LAST_UPDATE",V.Ambient.Now,"LAST_USER",V.Caller.User)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("delete from GCG_5892_UPDATES where WEEK_BEG = '{0}';",V.Global.dLoadedBeg.PervasiveDate,V.Local.sSQL)
+F.ODBC.Connection!conupdate.OpenCompanyConnection
+F.ODBC.Connection!conupdate.Execute(V.Local.sSQL)
+F.Data.DataTable.SaveToDB("dtUpdate","conupdate","GCG_5892_UPDATES","",128)
+F.ODBC.Connection!conupdate.Close
+
+F.Data.DataTable.Close("dtUpdate")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.SendUpdate.End
+
+Program.Sub.timerCheckUpdate_Timer.Start
+V.Local.sSQL.Declare
+V.Local.sLastUpdate.Declare
+V.Local.sUser.Declare
+V.Local.dLastUpdate.Declare
+F.Intrinsic.Control.Try
+
+F.Intrinsic.String.Build("select WEEK_BEG, LAST_UPDATE, LAST_USER from GCG_5892_UPDATES where WEEK_BEG = '{0}';",V.Global.dLoadedBeg.PervasiveDate,V.Local.sSQL)
+F.ODBC.Connection!contimer.OpenCompanyConnection
+F.Data.DataTable.CreateFromSQL("dtUpdate","contimer",V.Local.sSQL)
+ F.ODBC.Connection!contimer.Close
+
+F.Intrinsic.Control.If(V.DataTable.dtUpdate.RowCount,>,0)
+	F.Intrinsic.Control.If(V.DataTable.dtUpdate(0).LAST_UPDATE!FieldVal,>,V.Global.dLastRefresh)
+		'Last update is after last refresh, update the label
+		V.Local.dLastUpdate.Set(V.DataTable.dtUpdate(0).LAST_UPDATE!FieldVal)
+		F.Intrinsic.String.Format(V.Local.dLastUpdate,"ddddd at ttttt",V.Local.sLastUpdate)
+		F.Global.Security.GetFullName(V.DataTable.dtUpdate(0).LAST_USER!FieldVal,V.Local.sUser)
+		F.Intrinsic.String.Build("Last Update: {0} by {1} ({2})",V.Local.sLastUpdate,V.DataTable.dtUpdate(0).LAST_USER!FieldVal,V.Local.sUser.Trim,V.Local.sLastUpdate)
+		Gui.F_WO_Paint.lblLastUpdate.Caption(V.Local.sLastUpdate)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.Close("dtUpdate")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.timerCheckUpdate_Timer.End
+
+Program.Sub.ExportData.Start
+V.Local.sForm.Declare(String, "F_WO_Paint")
+V.Local.sControl.Declare(String, "gsgcDash")
+V.Local.sFileExport.Declare
+V.Local.sMsg.Declare
+V.Local.sFileString.Declare
+V.Local.sLastRefreshed.Declare
+V.Local.bExcel.Declare
+V.Local.bLibre.Declare
+V.Local.bFileLocked.Declare
+F.Intrinsic.Control.Try
+
+'Arc Number - 5892
+F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+F.Automation.OOGeneral.CheckPresence(V.Local.bLibre)
+F.Intrinsic.Control.If(V.Local.bExcel)
+	F.Intrinsic.String.Build("{0}GCG_5892_{1}_Export_{2}_{3}.xlsx",V.Caller.LocalGSSTempDir,V.Local.sControl,V.Global.dLastRefresh.FormatYYYYMMDD,V.Global.dLastRefresh.FormatHHNNSS,V.Local.sFileExport)
+	F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+	F.Intrinsic.Control.If(V.Local.bFileLocked)
+		F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File : {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+		F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+	F.Intrinsic.Control.Else
+		Gui.[V.Local.sForm].[V.Local.sControl].Export(V.Local.sFileExport,"xlsx")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+F.Intrinsic.Control.ElseIf(V.Local.bLibre)
+	F.Intrinsic.String.Build("{0}GCG_5892_{1}_Export_{2}_{3}.xlsx",V.Caller.LocalGSSTempDir,V.Local.sControl,V.Global.dLastRefresh.FormatYYYYMMDD,V.Global.dLastRefresh.FormatHHNNSS,V.Local.sFileExport)
+	F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+	F.Intrinsic.Control.If(V.Local.bFileLocked)
+		F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File : {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+		F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+	F.Intrinsic.Control.Else
+		Gui.[V.Local.sForm].[V.Local.sControl].Export(V.Local.sFileExport,"xlsx")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("{0}GCG_5892_{1}_Export_{2}_{3}.csv",V.Caller.LocalGssTempDir,V.Local.sControl,V.Global.dLastRefresh.FormatYYYYMMDD,V.Global.dLastRefresh.FormatHHNNSS,V.Local.sFileExport)
+	F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+	F.Intrinsic.Control.If(V.Local.bFileLocked)
+		F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+		F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+	F.Intrinsic.Control.Else
+		Gui.[V.Local.sForm].[V.Local.sControl].Export(V.Local.sFileExport,"csv")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.ExportData.End
+
+Program.Sub.cmdSave_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	v.Local.sParent.Declare
+	v.Local.schild.Declare
+	v.Local.sNotes.Declare
+	v.Local.sFilter.Declare
+	
+		v.Local.sParent.Set(v.Screen.Notes!txtParent.Text)
+		v.Local.schild.Set(v.Screen.Notes!txtChild.Text)
+		v.Local.sNotes.Set(v.Screen.Notes!txtNotes.Text)
+	
+		f.Intrinsic.String.Build("Select Notes from GCG_5892_Notes where Parent_Part = '{0}' and Child_part = '{1}'",v.Local.sParent.PSQLFriendly,v.Local.schild.PSQLFriendly,v.Local.sSQL)
+		F.ODBC.Connection!con.OpenCompanyConnection
+		f.ODBC.Connection!Con.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+		f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+			f.Intrinsic.String.Build("Insert into GCG_5892_Notes (Parent_Part,Child_Part,Notes) values ('{0}','{1}','{2}')",v.Local.sParent.PSQLFriendly,v.Local.schild.PSQLFriendly,v.Local.sNotes.PSQLFriendly,v.Local.sSQL)
+		f.Intrinsic.Control.Else
+			f.Intrinsic.String.Build("Update GCG_5892_Notes set Notes = '{2}' where Parent_Part = '{0}' and Child_part = '{1}'",v.Local.sParent.PSQLFriendly,v.Local.schild.PSQLFriendly,v.Local.sNotes.PSQLFriendly,v.Local.sSQL)		
+		f.Intrinsic.Control.EndIf
+		f.ODBC.Connection!con.Execute(v.Local.sSQL)
+		F.ODBC.Connection!con.Close	
+		
+		f.Intrinsic.String.Build("Trim(Parent_part) = '{0}' and Trim(Part) = '{1}'",v.Local.sParent.PSQLFriendly,v.Local.schild.PSQLFriendly,v.Local.sFilter)
+		f.Data.DataView.Create("dtJobChildInfo","vNotes",22,v.Local.sFilter,"")
+		f.Data.DataView.SetValue("dtJobChildInfo","vNotes",-1,"Notes",v.Local.sNotes)
+		f.Data.DataTable.AcceptChanges("dtJobChildInfo")
+		f.Data.DataView.Close("dtJobChildInfo","vNotes")
+		gui.Notes..Visible(False)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage,"ScriptFile",V.Caller.ScriptFile,"CurrentSubroutine",V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.Notes_UnLoad.Start
+gui.Notes..Visible(false)
+Program.Sub.Notes_UnLoad.End
+
+Program.Sub.Comments.Start
+${$5$}$2.0.0.0$}$2
+${$6$}$bbaker$}$20200406104711766$}$pM7xsHplA2E9VCTenDTJ47gi1rF/t66WgCAzmQ5J8R6swuwAKqVrHQ2Lxf/NmeCyEkrHvZ8CmpY=
+Program.Sub.Comments.End
